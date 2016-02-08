@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Movie Info</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="home_pager_title">
+        <item>Now Playing</item>
+        <item>Favourites</item>
+    </string-array>
+
+    <string name="genres">Genres</string>
+    <string name="loading">Loading…</string>
+    <string name="rating">Rating</string>
+    <string name="released_date">Released Date</string>
+    <string name="retry">Retry</string>
+    <string name="runtime">Runtime</string>
+    <string name="trailers">Trailers</string>
+    <string name="more_like_this">More Like This</string>
+    <string name="format_runtime">%1$d mins</string>
+    <string name="format_rating">%1$.1f / 10.0 (%2$d votes)</string>
+
+    <string name="message_favourite_movie_success">Added to favourite movie.</string>
+    <string name="message_unfavourite_movie_success">Removed from favourite movie.</string>
+
+    <string name="title_activity_movie_detail">MovieDetailActivity</string>
+
+</resources>
