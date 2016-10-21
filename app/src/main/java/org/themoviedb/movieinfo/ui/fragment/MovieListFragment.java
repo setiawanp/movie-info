@@ -12,9 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-
 import org.themoviedb.movieinfo.Constants;
 import org.themoviedb.movieinfo.R;
 import org.themoviedb.movieinfo.data.model.Movie;
@@ -27,18 +24,20 @@ import org.themoviedb.movieinfo.ui.widget.SpaceItemDecoration;
 import org.themoviedb.movieinfo.util.RxUtils;
 import org.themoviedb.movieinfo.util.ViewUtils;
 
-import rx.Observable;
-import rx.Subscriber;
-import rx.Subscription;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
-
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import rx.Observable;
+import rx.Subscriber;
+import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 public class MovieListFragment extends BaseFragment
         implements  SwipeRefreshLayout.OnRefreshListener,

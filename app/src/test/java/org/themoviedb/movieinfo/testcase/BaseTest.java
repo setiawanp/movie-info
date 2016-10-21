@@ -6,6 +6,6 @@ import org.themoviedb.movieinfo.TestApplication;
 
 @Config(application = TestApplication.class,
         constants = BuildConfig.class,
-        sdk = 18)
+        sdk = 21)
 public class BaseTest {
 }
