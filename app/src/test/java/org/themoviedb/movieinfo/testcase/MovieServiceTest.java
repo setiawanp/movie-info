@@ -1,5 +1,6 @@
 package org.themoviedb.movieinfo.testcase;
 
+import com.raizlabs.android.dbflow.config.FlowConfig;
 import com.raizlabs.android.dbflow.config.FlowManager;
 
 import junit.framework.Assert;
@@ -48,7 +49,7 @@ public class MovieServiceTest extends BaseTest {
 
     @Before
     public void setUp() {
-        FlowManager.init(RuntimeEnvironment.application);
+        FlowManager.init(new FlowConfig.Builder(RuntimeEnvironment.application).build());
     }
 
     @After

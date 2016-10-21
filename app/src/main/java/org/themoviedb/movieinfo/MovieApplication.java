@@ -2,6 +2,7 @@ package org.themoviedb.movieinfo;
 
 import android.app.Application;
 
+import com.raizlabs.android.dbflow.config.FlowConfig;
 import com.raizlabs.android.dbflow.config.FlowManager;
 
 import org.themoviedb.movieinfo.di.component.ApplicationComponent;
@@ -17,7 +18,7 @@ public class MovieApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        FlowManager.init(this);
+        FlowManager.init(new FlowConfig.Builder(this).build());
         mApplicationComponent = DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(BuildConfig.BASE_URL_API))
                 .build();
