@@ -42,6 +42,7 @@
 
     <style name="ExpandedTitleTextAppearance" parent="TextAppearance.AppCompat.Title">
         <item name="android:textSize">0sp</item>
+        <item name="android:textColor">@android:color/transparent</item>
     </style>
 
 </resources>
