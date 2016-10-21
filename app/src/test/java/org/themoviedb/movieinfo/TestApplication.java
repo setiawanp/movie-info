@@ -1,5 +1,6 @@
 package org.themoviedb.movieinfo;
 
+import com.raizlabs.android.dbflow.config.FlowConfig;
 import com.raizlabs.android.dbflow.config.FlowManager;
 
 import org.themoviedb.movieinfo.di.component.ApplicationComponent;
@@ -13,7 +14,7 @@ public class TestApplication extends MovieApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        FlowManager.init(this);
+        FlowManager.init(new FlowConfig.Builder(this).build());
         mApplicationComponent = DaggerMockApplicationComponent.builder()
                 .mockApplicationModule(new MockApplicationModule(BuildConfig.BASE_URL_API))
                 .build();

@@ -78,7 +78,7 @@ public class MovieService implements IMovieService {
     public Observable<PaginatedList<Movie>> getFavouriteMovies(int page) {
         long count;
         try {
-            count = SQLite.select().from(MovieTable.class).count();
+            count = SQLite.selectCountOf().from(MovieTable.class).count();
         } catch (SQLiteDoneException e) {
             count = 0;
         }
