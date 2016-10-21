@@ -20,8 +20,8 @@ import org.themoviedb.movieinfo.data.model.PaginatedList;
 public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         implements EndlessDataAdapter<PaginatedList<Movie>> {
 
-    private static final int ITEM_VIEW_TYPE_ITEM = 0;
-    private static final int ITEM_VIEW_TYPE_FOOTER = 1;
+    protected static final int ITEM_VIEW_TYPE_ITEM = 0;
+    protected static final int ITEM_VIEW_TYPE_FOOTER = 1;
 
     protected OnClickListener mOnClickListener;
     private final Context mContext;

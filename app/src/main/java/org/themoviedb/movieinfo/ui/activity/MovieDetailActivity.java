@@ -18,10 +18,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 import com.squareup.picasso.Picasso;
 
 import org.themoviedb.movieinfo.R;
@@ -30,21 +26,24 @@ import org.themoviedb.movieinfo.data.model.PaginatedList;
 import org.themoviedb.movieinfo.data.model.YoutubeVideo;
 import org.themoviedb.movieinfo.domain.service.IMovieService;
 import org.themoviedb.movieinfo.ui.adapter.MovieAdapter;
+import org.themoviedb.movieinfo.ui.adapter.SimilarMovieAdapter;
 import org.themoviedb.movieinfo.ui.adapter.TrailerAdapter;
 import org.themoviedb.movieinfo.ui.widget.ProportionalImageView;
 import org.themoviedb.movieinfo.ui.widget.SpaceItemDecoration;
-import org.themoviedb.movieinfo.ui.widget.WrappingLinearLayoutManager;
 import org.themoviedb.movieinfo.util.RxUtils;
 import org.themoviedb.movieinfo.util.ViewUtils;
 
+import javax.inject.Inject;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import rx.Observable;
 import rx.Subscriber;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func2;
 import rx.schedulers.Schedulers;
-
-import javax.inject.Inject;
 
 public class MovieDetailActivity extends BaseActivity
         implements MovieAdapter.OnClickListener,
@@ -230,14 +229,14 @@ public class MovieDetailActivity extends BaseActivity
         mTrailerAdapter = new TrailerAdapter(this, this);
         trailerList.setNestedScrollingEnabled(false);
         trailerList.setHasFixedSize(true);
-        trailerList.setLayoutManager(new WrappingLinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        trailerList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         trailerList.addItemDecoration(new SpaceItemDecoration(space));
         trailerList.setAdapter(mTrailerAdapter);
 
-        mSimilarAdapter = new MovieAdapter(this, this);
+        mSimilarAdapter = new SimilarMovieAdapter(this, this);
         similarList.setNestedScrollingEnabled(false);
         similarList.setHasFixedSize(true);
-        similarList.setLayoutManager(new WrappingLinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        similarList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         similarList.addItemDecoration(new SpaceItemDecoration(space));
         similarList.setAdapter(mSimilarAdapter);
         swipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
